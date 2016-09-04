@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F7A61CC6-0546-462D-A894-33491B672AD4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BetterSession.AspNetCore.Mvc", "src\BetterSession.AspNetCore.Mvc\BetterSession.AspNetCore.Mvc.xproj", "{53D94EBA-4885-476C-B903-B7373FC27DF1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BetterSession.AspNetCore", "src\BetterSession.AspNetCore\BetterSession.AspNetCore.xproj", "{53D94EBA-4885-476C-B903-B7373FC27DF1}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BetterSession.AspNetCore.Mvc.Tests", "test\BetterSession.AspNetCore.Mvc.Tests\BetterSession.AspNetCore.Mvc.Tests.xproj", "{DD7B18DA-78CD-4833-8F43-862E413DDBF3}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BetterSession.AspNetCore.Tests", "test\BetterSession.AspNetCore.Tests\BetterSession.AspNetCore.Tests.xproj", "{DD7B18DA-78CD-4833-8F43-862E413DDBF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
