@@ -1,5 +1,5 @@
-$nugetProjects = @(".\src\BetterSession.AspNetCore.Mvc")
-$testProjects = @(".\test\BetterSession.AspNetCore.Mvc.Tests")
+$nugetProjects = @(".\src\BetterSession.AspNetCore")
+$testProjects = @(".\test\BetterSession.AspNetCore.Tests")
 
 function EnsurePsbuildInstalled{  
     [cmdletbinding()]
