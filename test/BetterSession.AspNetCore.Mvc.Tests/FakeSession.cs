@@ -1,27 +1,24 @@
-﻿using Microsoft.AspNet.Http.Features;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
-namespace BetterSession.AspNet.Mvc.Tests
+namespace BetterSession.AspNetCore.Tests
 {
     public class FakeSession : ISession
     {
         public IDictionary<string, byte[]> cache = new Dictionary<string, byte[]>();
-        public IEnumerable<string> Keys
-        {
-            get
-            {
-                return cache.Keys;
-            }
-        }
+        public string Id { get; }
+
+        public IEnumerable<string> Keys => cache.Keys;
 
         public void Clear()
         {
             cache.Clear();
         }
 
+        public bool IsAvailable { get; }
+        
         public Task CommitAsync()
         {
             throw new NotImplementedException();

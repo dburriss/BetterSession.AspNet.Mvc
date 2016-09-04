@@ -1,4 +1,4 @@
-﻿namespace BetterSession.AspNet.Mvc.Tests
+﻿namespace BetterSession.AspNetCore.Tests
 {
     public class TestModel
     {

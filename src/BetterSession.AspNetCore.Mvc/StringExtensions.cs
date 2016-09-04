@@ -1,4 +1,4 @@
-﻿namespace BetterSession.AspNet.Mvc
+﻿namespace BetterSession.AspNetCore
 {
     public static class StringExtensions
     {

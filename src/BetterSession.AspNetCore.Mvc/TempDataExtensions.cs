@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNet.Mvc.ViewFeatures;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PhilosophicalMonkey;
 using System;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace BetterSession.AspNet.Mvc
+namespace BetterSession.AspNetCore.Mvc
 {
     public static class TempDataExtensions
     {

@@ -1,14 +1,15 @@
-﻿using Microsoft.AspNet.Http.Features;
+﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Xunit;
+using BetterSession.AspNetCore.Mvc;
 
-namespace BetterSession.AspNet.Mvc.Tests
+namespace BetterSession.AspNetCore.Tests
 {
-    public class SessionExtensionsTests
+    public class TempDataExtensionsTests
     {
         [Fact]
         public void Set_TisString_SavesWithoutError()
         {
-            ISession session = new FakeSession();
+            ITempDataDictionary session = new FakeTempData();
             session.Set<string>("t", "TEST");
             Assert.True(true);
         }
@@ -16,7 +17,7 @@ namespace BetterSession.AspNet.Mvc.Tests
         [Fact]
         public void Set_TisInt_SavesWithoutError()
         {
-            ISession session = new FakeSession();
+            ITempDataDictionary session = new FakeTempData();
             session.Set("t", 1);
             Assert.True(true);
         }
@@ -24,7 +25,7 @@ namespace BetterSession.AspNet.Mvc.Tests
         [Fact]
         public void Set_TisComplex_SavesWithoutError()
         {
-            ISession session = new FakeSession();
+            ITempDataDictionary session = new FakeTempData();
             var model = new TestModel();
             session.Set("t", model);
             Assert.True(true);
@@ -33,61 +34,62 @@ namespace BetterSession.AspNet.Mvc.Tests
         [Fact]
         public void Set_TisString_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
-            session.Set("t", "TEXT");
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
+            tempData.Set("t", "TEXT");
             Assert.True(fake.cache.ContainsKey("t"));
         }
 
         [Fact]
         public void Set_TisInt_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
-            session.Set("t", 1);
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
+            tempData.Set("t", 1);
             Assert.True(fake.cache.ContainsKey("t"));
         }
 
         [Fact]
         public void Set_TisComplex_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
             var model = new TestModel();
-            session.Set("t", model);
+            tempData.Set("t", model);
             Assert.True(fake.cache.ContainsKey("t"));
         }
 
         [Fact]
         public void Get_TisString_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
-            session.Set("t", "TEXT");
-            Assert.Equal("TEXT", session.Get<string>("t"));
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
+            tempData.Set("t", "TEXT");
+            var result = tempData.Get<string>("t");
+            Assert.Equal("TEXT", result);
         }
 
         [Fact]
         public void Get_TisInt_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
-            session.Set("t", 1);
-            Assert.Equal(1, session.Get<int>("t"));
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
+            tempData.Set("t", 1);
+            Assert.Equal(1, tempData.Get<int>("t"));
         }
 
         [Fact]
         public void Get_TisComplex_Persists()
         {
-            var fake = new FakeSession();
-            ISession session = fake as ISession;
+            var fake = new FakeTempData();
+            ITempDataDictionary tempData = fake as ITempDataDictionary;
             var model = new TestModel()
             {
                 Nr = 1,
                 Name = "D"
             };
-            session.Set("t", model);
-            var value = session.Get<TestModel>("t");
+            tempData.Set("t", model);
+            var value = tempData.Get<TestModel>("t");
             Assert.NotNull(value);
             Assert.Equal(1, value.Nr);
             Assert.Equal("D", value.Name);

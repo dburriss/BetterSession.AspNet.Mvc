@@ -1,22 +1,24 @@
-﻿using Microsoft.AspNet.Http.Features;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 
-namespace BetterSession.AspNet.Mvc
+namespace BetterSession.AspNetCore.Http
 {
     public static class SessionExtensions
     {
         public static void Set<T>(this ISession session, string key, T data)
         {
-            if(typeof(T) == typeof(string))
+            if (typeof(T) == typeof(string))
             {
                 var v = data as string;
                 session.Set(key, v.ToBytes());
-                return;
             }
-            var sData = JsonConvert.SerializeObject(data);
-            session.Set(key, sData);
+            else
+            {
+                var sData = JsonConvert.SerializeObject(data);
+                session.Set(key, sData);
+            }
         }
 
         public static T Get<T>(this ISession session, string key)
