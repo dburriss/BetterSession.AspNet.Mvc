@@ -44,7 +44,7 @@ var value = tempData.Get<TestModel>("t");
 [2]: https://ci.appveyor.com/project/dburriss/bettersession-aspnet-mvc
 [3]: https://ci.appveyor.com/api/projects/status/3tifnpya6kvai7p8/branch/master?svg=true
 [4]: https://ci.appveyor.com/project/dburriss/bettersession-aspnet-mvc/branch/master
-[5]: https://img.shields.io/myget/dburriss-ci/vpre/BetterSession.AspNet.Mvc.svg
+[5]: https://img.shields.io/myget/dburriss-ci/vpre/BetterSession.AspNetCore.svg
 [6]: http://myget.org/gallery/dburriss-ci
-[7]: https://img.shields.io/nuget/v/BetterSession.AspNet.Mvc.svg
-[8]: https://www.nuget.org/packages/BetterSession.AspNet.Mvc/
+[7]: https://img.shields.io/nuget/v/BetterSession.AspNetCore.svg
+[8]: https://www.nuget.org/packages/BetterSession.AspNetCore/
