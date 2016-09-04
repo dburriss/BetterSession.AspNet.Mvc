@@ -12,7 +12,7 @@ Extension methods for helping deal with complex types for TempData and Session.
 
 The ISession has a `void Set<T>(string key, T value)` and `T Get<T>(string key)` methods.
 
-`using BetterSession.AspNet.Mvc;`
+`using BetterSession.AspNetCore.Http;`
 
 ```csharp
 var model = new TestModel()
@@ -28,7 +28,7 @@ var value = session.Get<TestModel>("t");
 
 The ITempDataDictionary has a `void Set<T>(string key, T value)` and `T Get<T>(string key)` methods.
 
-`using BetterSession.AspNet.Mvc;`
+`using BetterSession.AspNetCore.Mvc;`
 
 ```csharp
 var model = new TestModel()
